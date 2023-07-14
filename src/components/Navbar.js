@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import suprsend from "@suprsend/web-sdk";
 import {useNavigate} from 'react-router-dom';
-import SuprSendInbox from "@suprsend/react-inbox"
+// import SuprSendInbox from "@suprsend/react-inbox"
 
 export default function Navbar(props) {
   const port = process.env.REACT_APP_PORT;
@@ -54,11 +54,11 @@ export default function Navbar(props) {
             </ul>
             </div>
         </div>
-        {localStorage.getItem('token')&&<SuprSendInbox
+        {/* {localStorage.getItem('token')&&<SuprSendInbox
           workspaceKey= {process.env.REACT_APP_WKEY}
           subscriberId= {data.key}
           distinctId= {data.email}
-        />}
+        />} */}
         </nav>
       </div>
   )
