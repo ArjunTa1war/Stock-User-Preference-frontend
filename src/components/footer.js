@@ -5,7 +5,7 @@ export default function footer() {
     <div>
         <nav className='navbar fixed-bottom navbar-expand-lg'style={{backgroundColor : "lightgrey"}}>
             <div className="container3 text-center">
-            <a className="github" href="https://github.com/SuprSend-NotificationAPI/white-labelled-notification"  target="_blank"></a>
+            <a className="github" href="https://github.com/SuprSend-NotificationAPI/Stocks-User-Preference"  target="_blank"></a>
             <a className="suprsend" href="https://www.suprsend.com"  target="_blank"></a>
             </div>
             <h4 style={{display : 'flex',right : 50,position : 'absolute'}}>Please Register Or Login to use this Site !</h4>
