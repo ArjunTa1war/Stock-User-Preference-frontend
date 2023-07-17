@@ -9,6 +9,8 @@ import {
   Routes,
 } from "react-router-dom";
 import Register from './components/Register';
+import BuyStock from './components/BuyStock';
+import "./index.css"
 suprsend.init(process.env.REACT_APP_WKEY,process.env.REACT_APP_WSECRET);
 
 function App(props) {
@@ -19,6 +21,8 @@ function App(props) {
       <Route exact path="/login" element = {<Login/>} />
       <Route exact path="/setting" element = {<Preferences />} />
       <Route exact path="/register" element = {<Register />} />
+      <Route exact path="/buystock" element = {<BuyStock ntype = "BUY"/>} />
+      <Route exact path="/sellstock" element = {<BuyStock ntype = "SELL"/>} />
       </Routes>
     </Router>
   )

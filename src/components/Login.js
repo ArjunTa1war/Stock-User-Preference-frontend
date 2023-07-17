@@ -24,6 +24,7 @@ export default function Login(props) {
     if(json.success){
       localStorage.setItem('token' , json.authtoken);
       suprsend.identify(formData.email);
+      suprsend.track("ADVISORY-STOCKS", {name : "suprsend"});
       navigate("/");
     }
     else{

@@ -2,7 +2,6 @@ import React from 'react'
 import suprsend from "@suprsend/web-sdk";
 import {useNavigate} from 'react-router-dom';
 
-
 export default function Register() {
   const port = process.env.REACT_APP_PORT;
    const [formData,setFormData] = React.useState({
@@ -24,10 +23,11 @@ export default function Register() {
             ,password : formData.password})
         });
         const json = await response.json();
-        // console.log(json);
+        console.log(json);
         if(json.success){
           localStorage.setItem('token' , json.authtoken);
           suprsend.identify(formData.email);
+          suprsend.track("PROMOTIONAL-STOCKS", {name : "suprsend"});
           navigate("/");
         }
         else{

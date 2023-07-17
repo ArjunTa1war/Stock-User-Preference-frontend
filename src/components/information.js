@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Stockdata from './stockdata'
 import Navbar from "./Navbar"
-import suprsend from "@suprsend/web-sdk";
+import Footer from './footer'
 
 
 export default function Information() {
@@ -58,11 +58,6 @@ export default function Information() {
     }
   }
   
-  const sendNotification = async(event)=>{
-    suprsend.track("STOCK_PREF", {name : "check"});
-
-  }
-
   return (
     <div>
       <Navbar/>
@@ -85,13 +80,16 @@ export default function Information() {
                 <Link className="dropdown-item" name = "GPV.TRV" onClick={changeSymb} to="/">GPV.TRV</Link>
                 <Link className="dropdown-item" name = "DAI.DEX" onClick={changeSymb} to="/">DAI.DEX</Link>
               </div>
-              {localStorage.getItem('token')&&<button className='mx-3 btn btn-primary' onClick={sendNotification}>Send Notification</button>}
+              
+              {localStorage.getItem('token')&&<Link className="btn btn-primary mx-3"  to="/buystock">Buy Stock</Link>}
+              {localStorage.getItem('token')&&<Link className="btn btn-primary"  to="/sellstock">Sell Stock</Link>}
             </div>
           </div>
         </div>
         </div> 
         <hr className='hr'></hr>
         <Stockdata Array={stockArray}/>
+         {!localStorage.getItem('token')&&<Footer />}
     </div>
   )
 }

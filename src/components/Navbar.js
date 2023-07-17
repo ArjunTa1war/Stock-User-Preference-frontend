@@ -46,11 +46,11 @@ export default function Navbar(props) {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{display : 'flex',right : 50,position : 'absolute'}}>
-                {!localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold"}} to="/register">Register</Link></li>}
-                {!localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold"}} to="/login">Login</Link></li>}
-                {localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold"}} to="/" 
+                {!localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold",backgroundColor : "lightgrey"}} to="/register">Register</Link></li>}
+                {!localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold",backgroundColor : "lightgrey"}} to="/login">Login</Link></li>}
+                {localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold",backgroundColor : "lightgrey"}} to="/" 
                  onClick={Logoutuser}>Logout</Link></li>}
-                {localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold"}} to="/setting">Settings</Link></li>}
+                {localStorage.getItem('token')&& <li className= "nav-item"> <Link className="nav-link" style={{fontWeight: "bold",backgroundColor : "lightgrey"}} to="/setting">Settings</Link></li>}
             </ul>
             </div>
         </div>
