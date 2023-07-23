@@ -29,7 +29,6 @@ export default function Navbar(props) {
   
   React.useEffect(()=>{
      if(localStorage.getItem('token')){
-      console.log("yes it runs");
       Getdetail();
      }
      else console.log("user not logged in");
