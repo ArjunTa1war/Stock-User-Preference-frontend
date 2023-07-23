@@ -24,7 +24,7 @@ export default function Stockdata(props) {
               <td>{element["4. close"]}</td>
               <td>{element["3. low"]}</td>
               <td>{element["2. high"]}</td>
-              <td>{element["6. volume"]}</td>
+              <td>{element["5. volume"]}</td>
             </tr>
         )
       })}

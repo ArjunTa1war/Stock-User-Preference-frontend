@@ -13,7 +13,7 @@ export default function Information() {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        let url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${symb}&apikey=${A_API}`;
+        let url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symb}&apikey=${A_API}`;
         let data = await fetch(url);
         let parseddata = await data.json();
         if (parseddata) {
@@ -39,7 +39,7 @@ export default function Information() {
   const changeSymb = async(event)=>{
     setSymb(event.target.name);
     try {
-      let url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${event.target.name}&apikey=${{A_API}}`;
+      let url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${event.target.name}&apikey=${{A_API}}`;
       let data = await fetch(url);
       let parseddata = await data.json();
       if (parseddata) {
