@@ -54,7 +54,7 @@ function NotificationCategoryPreferences({
   return preferenceData.sections?.map((section, index) => {
     return (
       <div style={{ marginBottom: 24 }} key={index}>
-        {section?.name && (
+        {section?.name && section.name==="Notification Categories" &&(
           <div
             style={{
               backgroundColor: "#FAFBFB",
@@ -70,13 +70,15 @@ function NotificationCategoryPreferences({
                 color: "#3D3D3D",
               }}
             >
-              {section.name}
+              {section.name==="Notification Categories"&&section.name}
             </p>
+            {section.name==="Notification Categories"&&
             <p style={{ color: "#6C727F" }}>{section.description}</p>
+  }
           </div>
         )}
-
-        {section?.subcategories?.map((subcategory, index) => {
+  
+        {section.name==="Notification Categories" &&section?.subcategories?.map((subcategory, index) => {
           return (
             <div
               key={index}
@@ -151,6 +153,7 @@ function NotificationCategoryPreferences({
     );
   });
 }
+
 
 // -------------- Channel Level Preferences -------------- //
 
